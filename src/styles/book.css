@@ -1,0 +1,205 @@
+.book {
+  position: relative;
+  padding-top: 30px;
+}
+
+.book-inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.book-header {
+  position: relative;
+}
+
+.book-title {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.book-txt {
+  position: relative;
+  display: block;
+  font-size: 1.8rem;
+  color: #a7a9a7;
+  text-align: center;
+}
+
+.book-main {
+  position: relative;
+  padding-top: 25px 0;
+}
+
+.book-category {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.book-list {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.book-list li {
+  position: relative;
+}
+
+.book-cate-bt {
+  position: relative;
+  display: block;
+  padding: 0px 20px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 44px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.book-cate-bt-active {
+  border: 1px solid transparent !important;
+  background-color: #333 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.book-slide-wrap {
+  position: relative;
+  height: 400px;
+  margin-top: 23px;
+}
+
+.book-slide {
+  position: relative;
+}
+
+.book-slide-item {
+  position: relative;
+}
+
+.book-link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.book-img {
+  position: relative;
+  width: 100%;
+  height: 335px;
+  overflow: hidden;
+}
+
+.book-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-info {
+  position: relative;
+  width: 100%;
+  padding: 22px 20px;
+}
+
+.book-info-title {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.book-info-price {
+  position: relative;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.book-slide-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+}
+
+.book-slide-prev::before {
+  content: "";
+  position: relative;
+  width: 10px;
+  height: 18px;
+  display: block;
+  margin: 0 auto;
+  background: url("/images/slider_arrow.svg") no-repeat center;
+  /* rotate 돌리기 , deg -> "각도" */
+  transform: rotateY(180deg);
+}
+
+.book-slide-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transform: translateX(50%) translateY(-50%);
+  border-radius: 50%;
+}
+
+.book-slide-next::before {
+  content: "";
+  position: relative;
+  width: 10px;
+  height: 18px;
+  display: block;
+  margin: 0 auto;
+  background: url("/images/slider_arrow.svg") no-repeat center;
+}
+
+.book-footer {
+  position: relative;
+  width: auto;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.book-footer button {
+  position: relative;
+  padding: 0 3.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.6rem;
+  line-height: 5.6rem;
+  border-radius: 3.8rem;
+  cursor: pointer;
+}

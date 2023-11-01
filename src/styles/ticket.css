@@ -1,0 +1,265 @@
+.ticket {
+  position: relative;
+  padding-top: 30px;
+}
+
+.ticket-inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.ticket-header {
+  position: relative;
+}
+
+.ticket-title {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.ticket-txt {
+  position: relative;
+  display: block;
+  font-size: 1.8rem;
+  color: #a7a9a7;
+  text-align: center;
+}
+
+.ticket-main {
+  position: relative;
+  padding-top: 25px 0;
+}
+
+.ticket-category {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-list {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.ticket-list li {
+  position: relative;
+}
+
+.ticket-cate-bt {
+  position: relative;
+  display: block;
+  padding: 0px 20px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 44px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.ticket-cate-bt-active {
+  border: 1px solid transparent !important;
+  background-color: #333 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.ticket-slide-wrap {
+  position: relative;
+  height: 520px;
+  margin-top: 23px;
+}
+
+.ticket-slide {
+  position: relative;
+}
+
+.ticket-slide-item {
+  position: relative;
+  height: 100%;
+}
+
+.ticket-link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ticket-slide-total {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ticket-slide-total img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.ticket-total-txt {
+  margin-top: 7px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3a3a3a;
+}
+
+.ticket-img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.ticket-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.ticket-img-num {
+  position: absolute;
+  bottom: 5%;
+  left: 7%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 7rem;
+  line-height: 4.5rem;
+}
+
+.ticket-info {
+  position: relative;
+  height: calc(100% - 310px);
+  padding: 1.6rem 0.8rem;
+  line-height: 1.5;
+}
+
+.ticket-info-title {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #111;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ticket-info-title b {
+  position: relative;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ticket-info-place {
+  position: relative;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #666;
+}
+
+.ticket-info-duration {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.4rem;
+  color: #999;
+}
+
+.ticket-info-babge {
+  position: relative;
+  height: 2.4rem;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0 0.8rem;
+  border: 1px solid #4a95ff;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  color: #4a95ff;
+  border-radius: 0.3rem;
+}
+
+.ticket-slide-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+}
+
+.ticket-slide-prev::before {
+  content: "";
+  position: relative;
+  width: 10px;
+  height: 18px;
+  display: block;
+  margin: 0 auto;
+  background: url("/images/slider_arrow.svg") no-repeat center;
+  /* rotate 돌리기 , deg -> "각도" */
+  transform: rotateY(180deg);
+}
+
+.ticket-slide-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transform: translateX(50%) translateY(-50%);
+  border-radius: 50%;
+}
+
+.ticket-slide-next::before {
+  content: "";
+  position: relative;
+  width: 10px;
+  height: 18px;
+  display: block;
+  margin: 0 auto;
+  background: url("/images/slider_arrow.svg") no-repeat center;
+}
+
+.ticket-footer {
+  position: relative;
+  width: auto;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.ticket-footer button {
+  position: relative;
+  padding: 0 3.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.6rem;
+  line-height: 5.6rem;
+  border-radius: 3.8rem;
+  cursor: pointer;
+}
