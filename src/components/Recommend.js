@@ -1,5 +1,43 @@
+/* eslint-disable no-template-curly-in-string */
+import { useRef, useState } from "react";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "../styles/recommend.css";
+
+import json from "../data/recommend.json";
+import SlideButton from "./SlideButton";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Recommend() {
+  const RecommendRes = json.recommend_slide;
+  // console.log(RecommendRes);
+  const swiperRef = useRef();
+  const [showPrevButton, setShowPrevButton] = useState(false);
+  const [showNextButton, setShowNextButton] = useState(true);
+
+  const swiperParams = {
+    modules: [Autoplay],
+    spaceBetween: 27,
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    speed: 500,
+    onSwiper: (swiper) => {
+      swiperRef.current = swiper;
+    },
+    onSlideChange: (swiper) => {
+      if (swiper.isBeginning) {
+        setShowPrevButton(false);
+        setShowNextButton(true);
+      } else if (swiper.isEnd) {
+        setShowPrevButton(true);
+        setShowNextButton(false);
+      } else {
+        setShowPrevButton(true);
+        setShowNextButton(true);
+      }
+    },
+  };
   return (
     <>
       <section className="recommend">
@@ -35,11 +73,48 @@ export default function Recommend() {
           </div>
           <div className="recommend-main">
             <div className="recommend-slide-wrap">
-              <div className="swiper recommend-slide">
-                <div className="swiper-wrapper"></div>
-              </div>
-              <button className="recommend-slide-prev"></button>
-              <button className="recommend-slide-next"></button>
+              <Swiper className="recommend-slide" {...swiperParams}>
+                {RecommendRes.map((data, i) => (
+                  <SwiperSlide className="swiper-slide" key={i}>
+                    <div className="recommend-slide-item">
+                      <a className="recommend-link" href={data.url}>
+                        <div className="recommend-img">
+                          <img src={data.file} alt={data.url} />
+                        </div>
+                        <div className="recommend-info">
+                          <ul>
+                            <li>
+                              <span className="recommend-good-info-price">
+                                <b>
+                                  {data.discount === 0
+                                    ? ""
+                                    : data.discount + "%"}
+                                </b>
+                                <em>
+                                  {data.price
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                  원
+                                </em>
+                              </span>
+                            </li>
+                            <li>
+                              <p className="recommend-good-info-desc">
+                                {data.prodName}
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <SlideButton
+                swiperRef={swiperRef}
+                showPrevButton={showPrevButton}
+                showNextButton={showNextButton}
+              />
             </div>
           </div>
 

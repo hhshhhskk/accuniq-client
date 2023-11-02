@@ -1,34 +1,37 @@
-import "../styles/visual.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import "../styles/visual.css";
+
 import json from "../data/visual.json";
+import { useRef } from "react";
+import SlideButton from "./SlideButton";
 
 export default function Visual() {
   const VisualRes = json.visual_slide;
   // console.log(VisualRes);
+
+  const swiperRef = useRef();
+  const swiperParams = {
+    modules: [Autoplay],
+    spaceBetween: 24,
+    slidesPerView: 2,
+    loop: true,
+    speed: 500,
+    autoplay: {
+      delay: 500,
+      disableOnInteraction: false,
+    },
+    onSwiper: (swiper) => {
+      swiperRef.current = swiper;
+    },
+  };
   return (
     <>
       <section className="visual">
         <div className="visual-inner">
           <div className="swiper visual-slide">
-            <Swiper
-              className="visual-slide"
-              modules={[Autoplay, Pagination, Navigation]}
-              spaceBetween={24}
-              slidesPerView={2}
-              loop={true}
-              speed={500}
-              autoplay={{
-                delay: 500,
-                disableOnInteraction: false,
-              }}
-              navigation={{
-                nextEl: ".visual-slide-next",
-                prevEl: ".visual-slide-prev",
-              }}
-            >
+            <Swiper className="visual-slide" {...swiperParams}>
               {VisualRes.map((data, i) => (
                 <SwiperSlide className="swiper-slide" key={i}>
                   <div className="visual-slide-item">
@@ -40,8 +43,11 @@ export default function Visual() {
               ))}
             </Swiper>
           </div>
-          <button className="visual-slide-prev"></button>
-          <button className="visual-slide-next"></button>
+          <SlideButton
+            swiperRef={swiperRef}
+            showPrevButton={true}
+            showNextButton={true}
+          />
         </div>
       </section>
     </>
