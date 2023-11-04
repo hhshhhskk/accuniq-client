@@ -3,19 +3,29 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "../styles/visual.css";
 
-import json from "../data/visual.json";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SlideButton from "./SlideButton";
 
 export default function Visual() {
-  const VisualRes = json.visual_slide;
-  // console.log(VisualRes);
+  const [visualRes, setVisualRes] = useState([]);
+  const fetchGetData = () => {
+    fetch("visual.json")
+      .then((res) => res.json())
+      .then((result) => {
+        // console.log(result.visual_slide);
+        setVisualRes(result.visual_slide);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const swiperRef = useRef();
   const swiperParams = {
     modules: [Autoplay],
     spaceBetween: 24,
     slidesPerView: 2,
+    slidesPerGroup: 1,
     loop: true,
     speed: 500,
     autoplay: {
@@ -26,13 +36,18 @@ export default function Visual() {
       swiperRef.current = swiper;
     },
   };
+
+  useEffect(() => {
+    fetchGetData();
+  }, []);
+
   return (
     <>
       <section className="visual">
         <div className="visual-inner">
           <div className="swiper visual-slide">
             <Swiper className="visual-slide" {...swiperParams}>
-              {VisualRes.map((data, i) => (
+              {visualRes.map((data, i) => (
                 <SwiperSlide className="swiper-slide" key={i}>
                   <div className="visual-slide-item">
                     <a href={data.url}>

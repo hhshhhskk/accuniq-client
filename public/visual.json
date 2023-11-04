@@ -1,0 +1,29 @@
+{
+  "total": 6,
+  "visual_slide": [
+    {
+      "file": "images/v1.png",
+      "url": "a.html"
+    },
+    {
+      "file": "images/v2.jpg",
+      "url": "b.html"
+    },
+    {
+      "file": "images/v3.jpg",
+      "url": "c.html"
+    },
+    {
+      "file": "images/v4.jpg",
+      "url": "d.html"
+    },
+    {
+      "file": "images/v5.jpg",
+      "url": "e.html"
+    },
+    {
+      "file": "images/v6.png",
+      "url": "f.html"
+    }
+  ]
+}
