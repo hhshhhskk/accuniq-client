@@ -49,3 +49,35 @@
   margin: 0 auto;
   background: url("/public/images/slider_arrow.svg") no-repeat center;
 }
+
+.content-footer {
+  position: relative;
+  width: auto;
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content-footer button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 3.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  cursor: pointer;
+  border-radius: 3.8rem;
+}
+.footer-bt-img {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: url("/public/images/slider_arrow.svg") no-repeat center;
+  object-fit: cover;
+}

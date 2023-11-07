@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Visual from "./components/Visual";
 import Recommend from "./components/Recommend";
+import Tour from "./components/Tour";
+import Ticket from "./components/Ticket";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <div className="main">
         <Visual />
         <Recommend />
+        <Tour />
+        <Ticket />
       </div>
       {/* 하단 영역 */}
       <Footer />

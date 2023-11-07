@@ -5,15 +5,16 @@ import "../styles/visual.css";
 
 import { useEffect, useRef, useState } from "react";
 import SlideButton from "./SlideButton";
+import axios from "axios";
 
 export default function Visual() {
   const [visualRes, setVisualRes] = useState([]);
-  const fetchGetData = () => {
-    fetch("visual.json")
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result.visual_slide);
-        setVisualRes(result.visual_slide);
+
+  const GetData = () => {
+    axios
+      .get("data/visual.json")
+      .then((res) => {
+        setVisualRes(res.data.visual_slide);
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +39,7 @@ export default function Visual() {
   };
 
   useEffect(() => {
-    fetchGetData();
+    GetData();
   }, []);
 
   return (

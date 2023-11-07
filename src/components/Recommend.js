@@ -1,17 +1,28 @@
 /* eslint-disable no-template-curly-in-string */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../styles/recommend.css";
-
-import json from "../data/recommend.json";
 import SlideButton from "./SlideButton";
+import axios from "axios";
+import ContentFooter from "./ContentFooter";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Recommend() {
-  const RecommendRes = json.recommend_slide;
-  // console.log(RecommendRes);
+  const [recommendRes, setRecommendRes] = useState([]);
+
+  const GetData = () => {
+    axios
+      .get("/data/recommend.json")
+      .then((res) => {
+        setRecommendRes(res.data.recommend_slide);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const swiperRef = useRef();
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [showNextButton, setShowNextButton] = useState(true);
@@ -38,6 +49,10 @@ export default function Recommend() {
       }
     },
   };
+  useEffect(() => {
+    GetData();
+  }, []);
+
   return (
     <>
       <section className="recommend">
@@ -74,7 +89,7 @@ export default function Recommend() {
           <div className="recommend-main">
             <div className="recommend-slide-wrap">
               <Swiper className="recommend-slide" {...swiperParams}>
-                {RecommendRes.map((data, i) => (
+                {recommendRes.map((data, i) => (
                   <SwiperSlide className="swiper-slide" key={i}>
                     <div className="recommend-slide-item">
                       <a className="recommend-link" href={data.url}>
@@ -117,12 +132,7 @@ export default function Recommend() {
               />
             </div>
           </div>
-
-          <div className="recommend-footer">
-            <button>
-              쇼핑 홈 바로가기<span className="footer-bt-img"></span>
-            </button>
-          </div>
+          <ContentFooter name="쇼핑" />
         </div>
       </section>
     </>
