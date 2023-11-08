@@ -4,9 +4,9 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../styles/recommend.css";
-import SlideButton from "./SlideButton";
+import SlideButton from "./ui/SlideButton";
 import axios from "axios";
-import ContentFooter from "./ContentFooter";
+import ContentFooter from "./ui/ContentFooter";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Recommend() {

@@ -1,8 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef, useState } from "react";
-import ContentFooter from "./ContentFooter";
-import SlideButton from "./SlideButton";
+import ContentFooter from "./ui/ContentFooter";
+import SlideButton from "./ui/SlideButton";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 

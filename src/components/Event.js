@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "../styles/event.css";
-import SlideButton from "./SlideButton";
+import SlideButton from "./ui/SlideButton";
 import { Autoplay } from "swiper/modules";
 import axios from "axios";
 

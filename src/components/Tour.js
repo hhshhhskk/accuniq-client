@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../styles/tour.css";
 
-import SlideButton from "./SlideButton";
+import SlideButton from "./ui/SlideButton";
 import axios from "axios";
-import ContentFooter from "./ContentFooter";
+import ContentFooter from "./ui/ContentFooter";
 const Tour = () => {
   const [tourRes, setTourRes] = useState([]);
 

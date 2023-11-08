@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../styles/ticket.css";
-import SlideButton from "./SlideButton";
-import ContentFooter from "./ContentFooter";
+import SlideButton from "./ui/SlideButton";
+import ContentFooter from "./ui/ContentFooter";
 
 const Ticket = () => {
   const [ticketRes, setTicketRes] = useState([]);

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "../styles/book.css";
-import SlideButton from "./SlideButton";
+import SlideButton from "./ui/SlideButton";
 import axios from "axios";
-import ContentFooter from "./ContentFooter";
+import ContentFooter from "./ui/ContentFooter";
 
 const Book = () => {
   const [bookRes, setBookRes] = useState([]);
