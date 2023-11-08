@@ -11,11 +11,14 @@ import ContentFooter from "./ContentFooter";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Recommend() {
   const [recommendRes, setRecommendRes] = useState([]);
+  const [recommenTotalRes, setRecommendTotalRes] = useState();
+  const [activeCategory, setActiveCategory] = useState("쎈딜");
 
   const GetData = () => {
     axios
       .get("/data/recommend.json")
       .then((res) => {
+        setRecommendTotalRes(res.data);
         setRecommendRes(res.data.recommend_slide);
       })
       .catch((err) => {
@@ -49,6 +52,13 @@ export default function Recommend() {
       }
     },
   };
+
+  const btClicked = (category, data) => {
+    setActiveCategory(category);
+    setRecommendRes(data);
+    swiperRef.current.slideTo(0, 0);
+  };
+
   useEffect(() => {
     GetData();
   }, []);
@@ -65,12 +75,32 @@ export default function Recommend() {
             <div className="recommend-category">
               <ul className="recommend-list">
                 <li>
-                  <button className="recommend-cate-bt recommend-cate-bt-active">
+                  <button
+                    className={
+                      activeCategory === "쎈딜"
+                        ? "recommend-cate-bt recommend-cate-bt-active"
+                        : "recommend-cate-bt"
+                    }
+                    onClick={() =>
+                      btClicked("쎈딜", recommenTotalRes.recommend_slide)
+                    }
+                  >
                     쎈딜
                   </button>
                 </li>
                 <li>
-                  <button className="recommend-cate-bt">베스트</button>
+                  <button
+                    className={
+                      activeCategory === "베스트"
+                        ? "recommend-cate-bt recommend-cate-bt-active"
+                        : "recommend-cate-bt"
+                    }
+                    onClick={() =>
+                      btClicked("베스트", recommenTotalRes.recommend_slide_best)
+                    }
+                  >
+                    베스트
+                  </button>
                 </li>
                 <li>
                   <button className="recommend-cate-bt">블프데이</button>
