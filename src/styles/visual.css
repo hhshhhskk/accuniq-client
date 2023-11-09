@@ -8,10 +8,6 @@
   position: relative;
 }
 
-.visual-slide-item a img {
-  width: 100%;
-}
-
 .visual-slide-prev {
   position: absolute;
   top: 50%;

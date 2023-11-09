@@ -130,6 +130,7 @@
   display: block;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
     linear-gradient(180deg, transparent 68.5%, rgba(0, 0, 0, 0.6));
+  border-radius: 15px;
 }
 
 .ticket-img img {

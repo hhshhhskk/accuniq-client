@@ -31,6 +31,10 @@ const SlideLink = styled.a`
   display: block;
   overflow: hidden;
   border-radius: 13px;
+
+  img {
+    width: 100%;
+  }
 `;
 export default function Visual() {
   const [visualRes, setVisualRes] = useState([]);
